@@ -70,7 +70,7 @@ function songSearch(song) {
             console.log("Artist: " + track.album.artists[0].name);
             console.log("Song: " + track.name);
             console.log("Preview: " + track.preview_url);
-            console.log("Allbum: " + track.album.name);
+            console.log("Album: " + track.album.name);
             console.log("")
             console.log("---------------------------")
 
@@ -134,7 +134,6 @@ function doWhat() {
 }
 
 function start() {
-
 
     if (toDo === "concert-this") {
         concert();
