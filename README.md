@@ -5,6 +5,6 @@
 # Installing Liri 
 
 1. Clone the Liri-App Repo to your local computer
-1. Create a new file ".env" that contains you spotify API key and Secret. 
+1. Create a new file called ".env" that contains you spotify API key and  Spotify Secret. 
      * SPOTIFY_ID=your-spotify-id
-       SPOTIFY_SECRET=your-spotify-secret
+     * SPOTIFY_SECRET=your-spotify-secret
