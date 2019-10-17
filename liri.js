@@ -30,6 +30,7 @@ function concert() {
 
             for (var i = 0; i < 3; i++) {
                 var event = response.data[i];
+                console.log("----------------------------");
                 console.log("")
                 console.log("Venue: " + event.venue.name);
                 if (event.region === "") {
@@ -39,7 +40,8 @@ function concert() {
                     console.log("Location: " + event.venue.city + ", " + event.venue.region + ", " + event.venue.country);
                 }
                 console.log("Date: " + moment(event.datetime).format("LLL"));
-                console.log("----------------------------");
+                console.log("")
+                
             }
         })
         .catch(function (err) {
@@ -61,11 +63,14 @@ function songSearch(song) {
 
             var track = (response.tracks.items[0]);
 
+            console.log("---------------------------")
             console.log("");
             console.log("Artist: " + track.album.artists[0].name);
             console.log("Song: " + track.name);
             console.log("Preview: " + track.preview_url);
             console.log("Allbum: " + track.album.name);
+            console.log("")
+            console.log("---------------------------")
 
         })
         .catch(function (err) {
