@@ -5,6 +5,7 @@ var axios = require("axios");
 var moment = require("moment");
 var spotifyreq = require("node-spotify-api");
 var keys = require("./keys.js");
+var filesystem = require("fs");
 
 var searchItem = "";
 var nodeArgs = process.argv;
@@ -15,34 +16,35 @@ for (var i = 3; i < nodeArgs.length; i++) {
         searchItem = searchItem + "+" + nodeArgs[i];
     } else {
         searchItem += nodeArgs[i];
-
     }
 }
-
-var concertURL = "https://rest.bandsintown.com/artists/" + searchItem + "/events?app_id=codingbootcamp"
 
 
 //================================================CONCERT================================================//
 function concert() {
 
+    var concertURL = "https://rest.bandsintown.com/artists/" + searchItem + "/events?app_id=codingbootcamp"
+
     axios.get(concertURL)
         .then(function (response) {
 
-            for (var i = 0; i < 3; i++) {
-                var event = response.data[i];
-                console.log("----------------------------");
-                console.log("")
-                console.log("Venue: " + event.venue.name);
-                if (event.region === "") {
-                    console.log("Location: " + event.venue.city + ", " + event.venue.country);
-                }
-                else {
-                    console.log("Location: " + event.venue.city + ", " + event.venue.region + ", " + event.venue.country);
-                }
-                console.log("Date: " + moment(event.datetime).format("LLL"));
-                console.log("")
-                
+            // console.log(response.data);
+
+            var event = response.data[1];
+            console.log("----------------------------");
+            console.log("")
+            console.log("Venue: " + event.venue.name);
+            if (event.region === "") {
+                console.log("Location: " + event.venue.city + ", " + event.venue.country);
             }
+            else {
+                console.log("Location: " + event.venue.city + ", " + event.venue.region + ", " + event.venue.country);
+            }
+            console.log("Date: " + moment(event.datetime).format("LLL"));
+            console.log("")
+            console.log("----------------------------");
+
+
         })
         .catch(function (err) {
             console.log(err);
@@ -79,6 +81,7 @@ function songSearch(song) {
 
 }
 
+//================================================OMDB================================================//
 function movieSearch(movie) {
 
     if (movie === "" || movie === null) {
@@ -91,11 +94,16 @@ function movieSearch(movie) {
         function (response) {
             console.log("---------------------------")
             console.log("");
-           // console.log(response);
+            //console.log(response.data.Ratings);
             console.log("Title: " + response.data.Title);
             console.log("Year: " + response.data.Year);
             console.log("IMDB Rating: " + response.data.imdbRating);
-            console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+            for (var k = 0; k < response.data.Ratings.length; k++) {
+                var agency = response.data.Ratings[k];
+                if (agency.Source === "Rotten Tomatoes") {
+                    console.log("Rotten Tomatoes Rating: " + agency.Value);
+                }
+            };
             console.log("Country(ies) filmed: " + response.data.Country);
             console.log("Language(es): " + response.data.Language);
             console.log("Plot: " + response.data.Plot);
@@ -108,10 +116,26 @@ function movieSearch(movie) {
         });
 }
 
+//================================================WHAT IT SAYS================================================//
+function doWhat() {
 
-function start(){
+    filesystem.readFile("random.txt", "utf8", function (error, data) {
 
-    
+        if (error) {
+            return console.log("Error: " + error)
+        }
+
+        var dataArg = data.split(",");
+
+        toDo = (dataArg[0]);
+        searchItem = (dataArg[1]);
+        start();
+    })
+}
+
+function start() {
+
+
     if (toDo === "concert-this") {
         concert();
     }
@@ -120,7 +144,10 @@ function start(){
     }
     else if (toDo === "movie-this") {
         movieSearch(searchItem);
-    }   
+    }
+    else if (toDo === "do-what-it-says") {
+        doWhat();
+    }
 }
 
 start();
