@@ -29,22 +29,21 @@ function concert() {
         .then(function (response) {
 
             // console.log(response.data);
-
-            var event = response.data[1];
-            console.log("----------------------------");
-            console.log("")
-            console.log("Venue: " + event.venue.name);
-            if (event.region === "") {
-                console.log("Location: " + event.venue.city + ", " + event.venue.country);
+            for (var i = 0; i < 3; i++) {
+                var event = response.data[i];
+               
+                console.log("")
+                console.log("Venue: " + event.venue.name);
+                if (event.region === "") {
+                    console.log("Location: " + event.venue.city + ", " + event.venue.country);
+                }
+                else {
+                    console.log("Location: " + event.venue.city + ", " + event.venue.region + ", " + event.venue.country);
+                }
+                console.log("Date: " + moment(event.datetime).format("LLL"));
+                console.log("")
+                console.log("----------------------------");
             }
-            else {
-                console.log("Location: " + event.venue.city + ", " + event.venue.region + ", " + event.venue.country);
-            }
-            console.log("Date: " + moment(event.datetime).format("LLL"));
-            console.log("")
-            console.log("----------------------------");
-
-
         })
         .catch(function (err) {
             console.log(err);
