@@ -6,8 +6,6 @@ var moment = require("moment");
 var spotifyreq = require("node-spotify-api");
 var keys = require("./keys.js");
 
-
-
 var searchItem = "";
 var nodeArgs = process.argv;
 var toDo = process.argv[2];
