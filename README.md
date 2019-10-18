@@ -39,4 +39,5 @@
           that information to execute the corresponding function
 
      ![GitHub Logo](/images/whatitsays.png)
+     ----------------------------------------------------------------------------------------------------
      ![GitHub Logo](/images/doWhat.png)
