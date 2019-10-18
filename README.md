@@ -16,10 +16,24 @@
 
 # Liri in Action 
 
- ## ***In the Terminal***
+ ## _**In the Terminal**_
+
+1. node liri.js concert-this 
+     * The concert-this function takes in the name of an artists, and returns three of their upcoming events.
+
+     ![GitHub Logo](/images/concert.png)
 
 1. node liri.js concert-this 
      * The concert-this function takes in the name of an artists, and returns three of their upcoming events.
 
      ![GitHub Logo](/images/concert.png)
    
+1. node liri.js concert-this 
+     * The concert-this function takes in the name of an artists, and returns three of their upcoming events.
+
+     ![GitHub Logo](/images/concert.png)
+
+1. node liri.js concert-this 
+     * The concert-this function takes in the name of an artists, and returns three of their upcoming events.
+
+     ![GitHub Logo](/images/concert.png)
