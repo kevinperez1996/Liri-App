@@ -7,15 +7,15 @@ var spotifyreq = require("node-spotify-api");
 var keys = require("./keys.js");
 var filesystem = require("fs");
 
+var argv = process.argv;
 var searchItem = "";
-var nodeArgs = process.argv;
-var toDo = process.argv[2];
+var toDo = argv[2];
 
-for (var i = 3; i < nodeArgs.length; i++) {
-    if (i > 3 && i < nodeArgs.length) {
-        searchItem = searchItem + "+" + nodeArgs[i];
+for (var i = 3; i < argv.length; i++) {
+    if (i > 3 && i < argv.length) {
+        searchItem = searchItem + "+" + argv[i];
     } else {
-        searchItem += nodeArgs[i];
+        searchItem += argv [i];
     }
 }
 

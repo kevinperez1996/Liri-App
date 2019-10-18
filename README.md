@@ -8,3 +8,11 @@
 1. Create a new file called ".env" that contains you spotify API key and  Spotify Secret. 
      * SPOTIFY_ID=your-spotify-id
      * SPOTIFY_SECRET=your-spotify-secret
+1. Run the command "npm install" in the terminal to install all dependencies. 
+
+# Liri in Action 
+     * In the Terminal
+
+1. node liri.js concert-this 
+     * ![GitHub Logo](/images/concert.png)
+        Format: ![Alt Text](url)
