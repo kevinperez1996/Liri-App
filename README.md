@@ -15,10 +15,11 @@
 1. Run the command "npm install" in the terminal to install all dependencies. 
 
 # Liri in Action 
-     ## ***In the Terminal***
+
+ ## ***In the Terminal***
 
 1. node liri.js concert-this 
-     * the concert-this function takes in the name of an artists, and returns three of their upcoming events.
-     
-     * ![GitHub Logo](/images/concert.png)
+     * The concert-this function takes in the name of an artists, and returns three of their upcoming events.
+
+     ![GitHub Logo](/images/concert.png)
    
