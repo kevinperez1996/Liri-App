@@ -22,21 +22,21 @@
 1. node liri.js concert-this (artist-name)
      * The concert function takes in the name of an artists, and returns three of their upcoming events.
 
-     !(/images/concert.png)
+     ![GitHub Logo](/images/concert.png)
 
 1. node liri.js spotify-this-song (song-name)
      * The spotify function takes in the name of a song, and returns some information about that song, including the artist.
 
-     !(/images/spotify.png)
+     ![GitHub Logo](/images/spotify.png)
    
 1. node liri.js movie-this (movie-name)
      * The movie function takes in the name of a movie, and returns the information about the movie, inclusing rating and cast. 
 
-     !(/images/movie.png)
+     ![GitHub Logo](/images/movie.png)
 
 1. node liri.js do-what-it-says
      * The what-it-says function does not take in any arguments, instead it reads the contents in the random.txt file, and uses
           that information to execute the corresponding function
 
-     !(/images/whatitsays.png)
-     !(/images/doWhat.png)
+     ![GitHub Logo](/images/whatitsays.png)
+     ![GitHub Logo](/images/doWhat.png)
