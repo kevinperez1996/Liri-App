@@ -1,6 +1,6 @@
 # About Liri 
 
-### Liri is a Node application that accepts various commands and outputs a result. This application can return results for a concert search, based on an artists; A Movie info search, based on a movie title; or a song info search based on a song title. The Liri app can be suefull when trying to find     information about a movie, concert, or song. In order to get the information for each of the user's request, the Liri App makes various API calls using the following methods/technologies: 
+### Liri is a Node application that accepts various commands and outputs a result. This application can return results for a concert search based on an artists; A Movie info search based on a movie title; or a song info search based on a song title. The Liri app can be suefull when trying to find     information about a movie, concert, or song. In order to get the information for each of the user's request, the Liri App makes various API calls using the following methods/technologies: 
 
 * Concert - API call using the AXIOS NPM package to refrence the BandsInTown API.
 * Spotify - API call using the node-Spotify-api NPM package.
@@ -41,3 +41,5 @@
      ![GitHub Logo](/images/whatitsays.png)
      ----------------------------------------------------------------------------------------------------
      ![GitHub Logo](/images/doWhat.png)
+
+     
